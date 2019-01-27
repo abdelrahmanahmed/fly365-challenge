@@ -19,6 +19,7 @@ npm install && npm start
     - from `7.001` to `8.999` , it will evaluated to `Very Good`
     -  from `5` to `7` , it will evaluated to `Good`
     - less than `5` , it will evaluated to `Bad`
+- For number of nights i assumed that max number of nights is 30 days, and i set this value in app config
 
 # Testing
 - i used Enzyme to test UI functionalities along with Jest. 

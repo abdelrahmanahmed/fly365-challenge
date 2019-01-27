@@ -6,6 +6,7 @@ import { styles } from './home.component.style';
 import { fetchHotels, fetchHotelDetails, updateNumberOfNights } from '../actions/hotels.action';
 import Gallery from './hotel/gallery/gallery.component';
 import Reviews from './hotel/reviews/reviews.component';
+import { config } from '../config/app';
 
 export class Home extends Component {
 
@@ -20,18 +21,18 @@ export class Home extends Component {
                     <CardContent>
                         <Grid container>
                             <Grid item xs={12}>
-                                <Typography color="textSecondary">
+                                <Typography color="textSecondary" className={classes.cardHead}>
                                     <a href='javascript:void(0)' onClick={() => { this.props.fetchHotelDetails(hotel.id) }}> {hotel.name}</a>
                                 </Typography>
                             </Grid>
                             <Grid item xs={4}>
                                 <img src={hotel.photo} />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={8}>
                                 <ul className={classes.list} >
                                     <li> ${hotel.pricePerNight * numberOfNights} for {numberOfNights} night</li>
-                                    <li> {hotel.totalScore}</li>
-                                    <li> total reviews {hotel.totalReviews}</li>
+                                    <li> {hotel.totalScore} {this.getReview(hotel.totalScore)}</li>
+                                    <li> {hotel.totalReviews} reviews</li>
                                 </ul>
                             </Grid>
                         </Grid>
@@ -40,7 +41,7 @@ export class Home extends Component {
             </Grid>
         ));
     }
-    
+
     getReview = (score) => {
         if (score >= 9)
             return 'Excellent';
@@ -56,10 +57,19 @@ export class Home extends Component {
         this.props.updateNumberOfNights(event.target.value);
     };
 
+    genereateNumberOfNightsList = () => {
+        let array = [];
+        for (let i = 1; i <= config.maxNumberOfNights; i++) {
+            array.push(<option key={i} value={i}>{i}</option>);
+        }
+        return array;
+    }
+
 
     render() {
         const { classes, hotelDetails } = this.props;
         const listItems = this.renderHotelsList(this.props.hotels, this.props.numberOfNights, classes);
+        const numberOfNightsList = this.genereateNumberOfNightsList();
         return (
             <Grid container spacing={8} justify="center">
 
@@ -68,37 +78,58 @@ export class Home extends Component {
                     {listItems.length > 0 ? listItems : <div>no data</div>}
 
                 </Grid>
-                {hotelDetails ?
-                    <Grid container justify="center">
-                        <Grid item xs={12}>
-                            <h1>{hotelDetails.name}</h1>
-                            for
-                            <FormControl className={classes.formControl}>
-                                <NativeSelect
-                                    className={classes.selectEmpty}
-                                    value={this.props.numberOfNights}
-                                    name="numberOfNights"
-                                    onChange={this.handleNumberOfNightsChange}
-                                >
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                </NativeSelect>
-                            </FormControl>
-                            nights
-                        </Grid>
 
-                        <Grid item xs={12}>
-                            <Gallery list={hotelDetails.pictures} />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Reviews list={hotelDetails.reviews} />
-                        </Grid>
+                <Grid container justify="center">
+                    <Grid item xs={8}>
+                        <Card>
+                            {hotelDetails ?
+                                <CardContent>
+                                    <Grid container spacing={16} justify="center">
+                                        <Grid item xs={12}>
+                                            <Typography variant="h4">
+                                                {hotelDetails.name}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={12}>
+
+                                            For
+                                  <FormControl className={classes.numberOfNightsDropDown}>
+                                                <NativeSelect
+                                                    className={classes.selectEmpty}
+                                                    value={this.props.numberOfNights}
+                                                    name="numberOfNights"
+                                                    onChange={this.handleNumberOfNightsChange}
+                                                >
+
+                                                    {numberOfNightsList}
+                                                </NativeSelect>
+                                            </FormControl>
+                                            nights
+
+                              </Grid>
+
+                                        <Grid item xs={12}>
+                                            <Gallery list={hotelDetails.pictures} />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <Reviews list={hotelDetails.reviews} />
+                                        </Grid>
+                                    </Grid>
+                                </CardContent>
+                                :
+                                <CardContent>
+                                    <Typography color="textSecondary" className={classes.nodata} >
+                                        No Hotel selcted
+                                </Typography>
+                                </CardContent>
+
+                            }
+
+                        </Card>
                     </Grid>
-                    :
+                </Grid>
 
-                    <div>no data</div>
-                }
+
             </Grid>
         )
     }

@@ -1,8 +1,22 @@
 export const styles = theme => ({
     card: {
-        minWidth: 275,
+        margin: '17px',
+        maxWidth: '250px',
+        padding: '0'
+    },
+    cardHead: {
+        paddingBottom: '14px',
     },
     list: {
         listStyle: 'none',
+        '& li': {
+            paddingBottom: '6px'
+        }
+    },
+    nodata: {
+        textAlign: 'center',
+    },
+    numberOfNightsDropDown:{
+        margin:'-10px 10px 0px 10px',
     }
 });  
