@@ -8,3 +8,5 @@ before_script:
   - npm install
 script: 
   - npm test 
+env:
+  - NODE_ENV: test
