@@ -40,7 +40,7 @@ export class Gallery extends Component {
         const { classes } = this.props;
         const galleryList = this.renderGalleryList(this.state.galleryList, classes);
         return (
-            <Grid container justify="center">
+            <Grid container justify="center"  className={classes.galleryContainer}>
                 <Grid item xs={12}>
                     <img className={classes.activePhoto} src={this.state.activePhoto} />
                 </Grid>

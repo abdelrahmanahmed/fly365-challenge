@@ -1,7 +1,7 @@
 export const styles = theme => ({
     list: {
         display: 'flex',
-        width: '400px',
+        width: '440px',
         height: '100px',
         overflowY: 'hidden',
         overflowX: 'scroll',
@@ -11,6 +11,9 @@ export const styles = theme => ({
         paddingLeft: '10px',
     },
     activePhoto: {
-        width: '250px'
+        maxWidth: '40%'
+    },
+    galleryContainer: {
+        textAlign: 'center'
     }
 });  

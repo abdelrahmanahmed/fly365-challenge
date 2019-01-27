@@ -2,7 +2,9 @@ export const styles = theme => ({
     card: {
         margin: '17px',
         maxWidth: '250px',
-        padding: '0'
+        padding: '0',
+        minHeight: '196px',
+        maxHeight: '196px',
     },
     cardHead: {
         paddingBottom: '14px',
@@ -16,7 +18,7 @@ export const styles = theme => ({
     nodata: {
         textAlign: 'center',
     },
-    numberOfNightsDropDown:{
-        margin:'-10px 10px 0px 10px',
+    numberOfNightsDropDown: {
+        margin: '-10px 10px 0px 10px',
     }
 });  
