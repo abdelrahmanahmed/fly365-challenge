@@ -30,7 +30,7 @@ npm test
 # bundling
 - to bundle the app run
 ```
-npm build
+npm build:prod
 ```
 
 # Todo
