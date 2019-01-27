@@ -15,6 +15,7 @@ export class Home extends Component {
         this.props.fetchHotels();
     }
     renderHotelsList = (hotels, numberOfNights, classes) => {
+        let nightWord = numberOfNights > 1 ? 'nights' : 'night';
         return (hotels.map((hotel, key) =>
             <Grid key={key} item>
                 <Card className={classes.card}>
@@ -30,7 +31,7 @@ export class Home extends Component {
                             </Grid>
                             <Grid item xs={8}>
                                 <ul className={classes.list} >
-                                    <li> ${hotel.pricePerNight * numberOfNights} for {numberOfNights} night</li>
+                                    <li> ${hotel.pricePerNight * numberOfNights} for {numberOfNights} {nightWord} </li>
                                     <li> {hotel.totalScore} {this.getReview(hotel.totalScore)}</li>
                                     <li> {hotel.totalReviews} reviews</li>
                                 </ul>
@@ -104,14 +105,14 @@ export class Home extends Component {
                                                     {numberOfNightsList}
                                                 </NativeSelect>
                                             </FormControl>
-                                            nights
+                                            {parseInt(this.props.numberOfNights) === 1 ? <div>night</div> : <div>nights</div>}
 
-                              </Grid>
+                                        </Grid>
 
                                         <Grid item xs={12}>
                                             <Gallery list={hotelDetails.pictures} />
                                         </Grid>
-                                        <Grid item xs={12}>
+                                        <Grid item xs={9}>
                                             <Reviews list={hotelDetails.reviews} />
                                         </Grid>
                                     </Grid>
