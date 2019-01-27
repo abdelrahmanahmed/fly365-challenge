@@ -27,6 +27,12 @@ npm install && npm start
 npm test
 ```
 
+# bundling
+- to bundle the app run
+```
+npm build
+```
+
 # Todo
 - [ ] enhance error handling
 - [ ] add loaders
