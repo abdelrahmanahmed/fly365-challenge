@@ -14,7 +14,7 @@ describe('Gallery Component', () => {
             { photo: 'photoLink3', thumbnail: 'thumbnailLink3' },
         ]
     }
-    beforeEach(() => {
+    beforeAll(() => {
         wrapper = shallow(<Gallery {...props} />);
         instance = wrapper.dive().instance();
 
