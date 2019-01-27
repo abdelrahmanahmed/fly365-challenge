@@ -1,5 +1,5 @@
 import hotels from './hotels.reducer';
-import { FETCH_HOTELS, FETCH_HOTELS_DETAILS } from '../constants/action-types.constants';
+import { FETCH_HOTELS, FETCH_HOTELS_DETAILS, UPDATE_NUMBER_OF_NIGHTS } from '../constants/action-types.constants';
 
 
 describe('Hotels Reducer', () => {
@@ -57,7 +57,15 @@ describe('Hotels Reducer', () => {
         expect(result.details).toEqual(action.payload.data);
         expect(result.numberOfNights).toEqual(initalState.numberOfNights);
     });
-
+    
+    it('returns new state with updated number of nights valus', () => {
+        const action = {
+            type: UPDATE_NUMBER_OF_NIGHTS,
+            payload: 2
+        }
+        const result = hotels(initalState, action);
+        expect(result.numberOfNights).toEqual(action.payload);
+    });
     it('returns default state when other action is provided', () => {
         const data = {
             type: 'other action',
