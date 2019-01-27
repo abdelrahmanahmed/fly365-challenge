@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/abdelrahmanahmed/fly365-challenge.svg?branch=master)](https://travis-ci.org/abdelrahmanahmed/fly365-challenge)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/c9324a3813958fe7662f/maintainability)](https://codeclimate.com/github/abdelrahmanahmed/fly365-challenge/maintainability)
 
 # Description
@@ -32,4 +31,5 @@ npm test
 - [ ] enhance error handling
 - [ ] add loaders
 - [ ] make Gallery component more generalized
-
+- [ ] add code coverage badge
+- [ ] add CD pipeline  
