@@ -105,7 +105,7 @@ export class Home extends Component {
                                                     {numberOfNightsList}
                                                 </NativeSelect>
                                             </FormControl>
-                                            {parseInt(this.props.numberOfNights) === 1 ? <div>night</div> : <div>nights</div>}
+                                            {parseInt(this.props.numberOfNights) === 1 ? <span>night</span> : <span>nights</span>}
 
                                         </Grid>
 
