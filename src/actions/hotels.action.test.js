@@ -30,5 +30,18 @@ describe('hotels action creators test suite', () => {
         expect(actions.fetchHotelDetails(id)).toHaveProperty('type');
         expect(actions.fetchHotelDetails(id)).toHaveProperty('type', actionTypes.FETCH_HOTELS_DETAILS);
     });
+
+    it('Create an action for updateNumberOfNights function', () => {
+        const numberOfNights = 3;
+        const expectedAction = {
+            type: actionTypes.UPDATE_NUMBER_OF_NIGHTS,
+            payload: numberOfNights
+        };
+        expect(actions.updateNumberOfNights(numberOfNights)).toEqual(expectedAction);
+        expect(actions.updateNumberOfNights(numberOfNights)).toHaveProperty('payload');
+        expect(actions.updateNumberOfNights(numberOfNights)).toHaveProperty('payload', numberOfNights);
+        expect(actions.updateNumberOfNights(numberOfNights)).toHaveProperty('type');
+        expect(actions.updateNumberOfNights(numberOfNights)).toHaveProperty('type', actionTypes.UPDATE_NUMBER_OF_NIGHTS);
+    });
 })
 
