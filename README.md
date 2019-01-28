@@ -5,7 +5,7 @@
 This repository is created to fetch hotels data from fly-365 API , 
 
 # Frameworks and tools
-- react
+- react - redux
 - Material UI
 
 # Installation
