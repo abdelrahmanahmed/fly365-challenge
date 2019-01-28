@@ -4,6 +4,10 @@
 # Description
 This repository is created to fetch hotels data from fly-365 API , 
 
+# Prerequests 
+- install npm `5.6.0`
+- install node `8.10.0`
+
 # Frameworks and tools
 - react - redux
 - Material UI
