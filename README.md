@@ -29,7 +29,7 @@ npm install && npm start
 npm test
 ```
 
-# bundling
+# Bundling
 - to bundle the app run
 ```
 npm build:prod
