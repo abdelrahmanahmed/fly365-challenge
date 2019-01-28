@@ -23,7 +23,7 @@ npm install && npm start
 
 # Testing
 - i used Enzyme to test UI functionalities along with Jest. 
-- to run unit tests with coverage
+- to run unit tests
 ```
 npm test
 ```
