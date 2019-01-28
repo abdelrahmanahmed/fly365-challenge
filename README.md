@@ -1,9 +1,6 @@
 [![Build Status](https://travis-ci.org/abdelrahmanahmed/fly365-challenge.svg?branch=master)](https://travis-ci.org/abdelrahmanahmed/fly365-challenge)
 [![codecov](https://codecov.io/gh/abdelrahmanahmed/fly365-challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/abdelrahmanahmed/fly365-challenge)
 
-# Description
-This repository is created to fetch hotels data from fly-365 API , 
-
 # Prerequests 
 - install npm `5.6.0`
 - install node `8.10.0`
