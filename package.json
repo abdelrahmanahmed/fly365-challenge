@@ -36,6 +36,7 @@
     "@material-ui/icons": "3.0.1",
     "axios": "0.18.0",
     "core-js": "2.5.7",
+    "css-loader": "^2.1.0",
     "es6-promise": "4.2.5",
     "react": "16.7.0",
     "react-dom": "16.7.0",

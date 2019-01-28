@@ -9,6 +9,9 @@ module.exports = {
     "main": [
       "./src/index.js"
     ],
+    "styles": [
+      "./src/styles/app.css"
+    ]
   },
   output: {
     path: path.join(process.cwd(), "./dist"),
@@ -33,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader"]
+        use: ["style-loader", "css-loader"]
       }
     ]
   },

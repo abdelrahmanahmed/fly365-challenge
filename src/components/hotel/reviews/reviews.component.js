@@ -135,13 +135,13 @@ export class Reviews extends Component {
         return (
             <Grid container>
                 <Grid container>
-                    <Grid item xs={2}>
+                    <Grid item xs={2} sm={3}>
                         <Typography variant="h4" className={classes.title}>
                             Reviews
                     </Typography>
                     </Grid>
 
-                    <Grid item xs={8} className={classes.sortingArrows}>
+                    <Grid item xs={10} sm={8} className={classes.sortingArrows}>
                         <IconButton
                             onClick={() => { this.sort('asc') }}
                             disabled={this.state.sortType === 'asc' ? true : false}
@@ -156,7 +156,7 @@ export class Reviews extends Component {
                         </IconButton>
                     </Grid>
                 </Grid>
-                <Grid container>
+                <Grid container className={classes.reviewsContainer}>
 
                     <Grid item xs={12}>
                         <ul className={classes.reviewsList}>

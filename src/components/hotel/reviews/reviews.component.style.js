@@ -25,7 +25,7 @@ export const styles = theme => ({
             cursor: 'pointer',
             display: 'inline-block',
             padding: '10px',
-            border: '2px solid #000000',
+            border: '1px solid #727272',
             margin: '0 10px',
         }
 
@@ -65,7 +65,10 @@ export const styles = theme => ({
         padding: '0px 10px 0px',
         '& p': {
             margin: '0 0 0 0',
-            paddingBottom:'15px'
+            paddingBottom: '15px'
         }
-    }
+    },
+    reviewsContainer: {
+        border:'1px solid #f3f3f3'
+    },
 });  

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withStyles, Card, CardContent, Typography, Grid, FormControl, NativeSelect } from '@material-ui/core';
+import {
+    withStyles, Card, CardContent, Typography, Grid, FormControl,
+    NativeSelect, CircularProgress
+} from '@material-ui/core';
 
 import { styles } from './home.component.style';
 import { fetchHotels, fetchHotelDetails, updateNumberOfNights } from '../actions/hotels.action';
@@ -76,7 +79,7 @@ export class Home extends Component {
 
                 <Grid container spacing={8} justify="center">
 
-                    {listItems.length > 0 ? listItems : <div>no data</div>}
+                    {listItems.length > 0 ? listItems : <div>      <CircularProgress /></div>}
 
                 </Grid>
 
